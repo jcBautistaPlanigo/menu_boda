@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menú de Cócteles · José & Jennifer</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Lato:wght@300;400;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    min-height: 100vh;
+    background: #F7F2EA;
+    font-family: 'Lato', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 16px;
+  }
+
+  .page {
+    max-width: 480px;
+    width: 100%;
+  }
+
+  .card {
+    background: #FEFCF8;
+    border-radius: 24px;
+    padding: 44px 36px 36px;
+    border: 1.5px solid #E0D5C5;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 40px rgba(180,150,100,0.10);
+  }
+
+  .rainbow-bar {
+    position: absolute; top: 0; left: 0; right: 0; height: 6px;
+    background: linear-gradient(90deg, #9DB17C, #C9A96E, #D4849A, #B07CC0, #9DB17C);
+  }
+  .rainbow-bar-bottom {
+    position: absolute; bottom: 0; left: 0; right: 0; height: 6px;
+    background: linear-gradient(90deg, #9DB17C, #C9A96E, #D4849A, #B07CC0, #9DB17C);
+  }
+
+  .deco-left  { position: absolute; top: 16px; left: 18px; font-size: 18px; opacity: 0.2; }
+  .deco-right { position: absolute; top: 16px; right: 18px; font-size: 18px; opacity: 0.2; }
+
+  .header { text-align: center; margin-bottom: 8px; }
+  .header .eyebrow {
+    font-family: 'Lato', sans-serif;
+    font-size: 10px; letter-spacing: 6px;
+    color: #B5A48A; text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 46px; color: #3D3228;
+    line-height: 1; font-style: italic;
+    margin-bottom: 8px;
+  }
+  .header .date {
+    font-size: 11px; color: #C9A96E;
+    letter-spacing: 3px; font-style: italic;
+  }
+
+  .divider {
+    display: flex; align-items: center; gap: 12px;
+    margin: 22px 0 20px;
+  }
+  .divider-line { flex: 1; height: 1px; background: #E0D5C5; }
+  .divider-label {
+    font-size: 10px; letter-spacing: 5px;
+    color: #B5A48A; text-transform: uppercase;
+  }
+
+  .drinks { display: flex; flex-direction: column; gap: 13px; }
+
+  .drink {
+    border-radius: 14px;
+    padding: 16px 18px;
+    display: flex; gap: 14px; align-items: center;
+    border: 1px solid;
+    border-left-width: 4px;
+    transition: transform 0.2s;
+  }
+  .drink:hover { transform: translateX(4px); }
+
+  .drink.green  { background: #F0F5E8; border-color: #C8D9A8; border-left-color: #9DB17C; }
+  .drink.peach  { background: #FDF4F0; border-color: #F0C8B8; border-left-color: #E8956A; }
+  .drink.gold   { background: #FEF6E4; border-color: #F0DFA0; border-left-color: #C9A96E; }
+  .drink.purple { background: #F4EEF8; border-color: #D8C0E8; border-left-color: #B07CC0; }
+
+  .drink svg { flex-shrink: 0; }
+
+  .drink-info { flex: 1; }
+  .drink-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px; font-weight: 700; margin-bottom: 3px;
+  }
+  .green  .drink-name { color: #2E3D1E; }
+  .peach  .drink-name { color: #3D2010; }
+  .gold   .drink-name { color: #3D2A00; }
+  .purple .drink-name { color: #2A1040; }
+
+  .drink-tag {
+    font-size: 9px; letter-spacing: 3px;
+    text-transform: uppercase; margin-bottom: 6px;
+    font-weight: 700;
+  }
+  .green  .drink-tag { color: #7A9456; }
+  .peach  .drink-tag { color: #C0724A; }
+  .gold   .drink-tag { color: #A07830; }
+  .purple .drink-tag { color: #8A54A8; }
+
+  .drink-ing {
+    font-size: 11px; font-style: italic; line-height: 1.5;
+  }
+  .green  .drink-ing { color: #7A8C6A; }
+  .peach  .drink-ing { color: #9A7060; }
+  .gold   .drink-ing { color: #9A8050; }
+  .purple .drink-ing { color: #7A5A8A; }
+
+  .footer {
+    margin-top: 26px; padding-top: 18px;
+    border-top: 1px dashed #E0D5C5;
+    text-align: center;
+  }
+  .footer-icons { font-size: 22px; margin-bottom: 8px; }
+  .footer-text {
+    font-size: 11px; color: #B5A48A;
+    letter-spacing: 3px; font-style: italic;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="card">
+    <div class="rainbow-bar"></div>
+    <div class="deco-left">🌿</div>
+    <div class="deco-right">🌿</div>
+
+    <div class="header">
+      <div class="eyebrow">— La boda de —</div>
+      <h1>José &amp; Jennifer</h1>
+      <div class="date">✦ 21 de Marzo 2026 ✦</div>
+    </div>
+
+    <div class="divider">
+      <div class="divider-line"></div>
+      <div class="divider-label">Cócteles</div>
+      <div class="divider-line"></div>
+    </div>
+
+    <div class="drinks">
+
+      <div class="drink green">
+        <svg width="48" height="58" viewBox="0 0 44 54">
+          <ellipse cx="22" cy="10" rx="16" ry="3" fill="none" stroke="#C8D9A8" stroke-width="2" stroke-dasharray="2,2"/>
+          <path d="M8 10 L6 38 Q22 44 38 38 L36 10 Z" fill="#A8C878" opacity="0.85"/>
+          <circle cx="34" cy="9" r="6" fill="#D4E89A" stroke="#9DB17C" stroke-width="1"/>
+          <line x1="34" y1="3" x2="34" y2="15" stroke="#9DB17C" stroke-width="0.8"/>
+          <line x1="28" y1="9" x2="40" y2="9" stroke="#9DB17C" stroke-width="0.8"/>
+          <path d="M8 10 L6 38 Q22 44 38 38 L36 10 Z" fill="none" stroke="#7A9456" stroke-width="1.2"/>
+          <line x1="22" y1="43" x2="22" y2="50" stroke="#7A9456" stroke-width="1.5"/>
+          <line x1="14" y1="50" x2="30" y2="50" stroke="#7A9456" stroke-width="2"/>
+          <path d="M10 14 Q5 10 4 6 Q6 7 8 12" fill="#E85A30" stroke="#C03A10" stroke-width="0.5"/>
+        </svg>
+        <div class="drink-info">
+          <div class="drink-name">Margarita al Pastor</div>
+          <div class="drink-tag">🌶️ Trago siempre juntos</div>
+          <div class="drink-ing">Tequila · piña asada · limón · chile ancho · sal de gusano</div>
+        </div>
+      </div>
+
+      <div class="drink peach">
+        <svg width="48" height="58" viewBox="0 0 44 54">
+          <path d="M10 4 L10 42 Q22 46 34 42 L34 4 Z" fill="#F9C0D0" opacity="0.7"/>
+          <circle cx="16" cy="30" r="1.5" fill="white" opacity="0.8"/>
+          <circle cx="22" cy="20" r="1" fill="white" opacity="0.8"/>
+          <circle cx="28" cy="35" r="1.2" fill="white" opacity="0.8"/>
+          <path d="M10 4 L10 42 Q22 46 34 42 L34 4 Z" fill="none" stroke="#E8956A" stroke-width="1.2"/>
+          <line x1="10" y1="4" x2="34" y2="4" stroke="#E8956A" stroke-width="1.5"/>
+          <rect x="14" y="34" width="6" height="6" rx="1" fill="white" opacity="0.6" stroke="#E8956A" stroke-width="0.5"/>
+          <rect x="22" y="36" width="5" height="5" rx="1" fill="white" opacity="0.5" stroke="#E8956A" stroke-width="0.5"/>
+          <circle cx="34" cy="4" r="5" fill="#D4E89A" stroke="#9DB17C" stroke-width="1"/>
+          <line x1="34" y1="0" x2="34" y2="8" stroke="#9DB17C" stroke-width="0.7"/>
+          <line x1="29" y1="4" x2="39" y2="4" stroke="#9DB17C" stroke-width="0.7"/>
+          <line x1="28" y1="2" x2="24" y2="46" stroke="#F4A060" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <div class="drink-info">
+          <div class="drink-name">La Paloma</div>
+          <div class="drink-tag">🌻 Trago nos casamos 💒</div>
+          <div class="drink-ing">Tequila · toronja · limón · agua mineral</div>
+        </div>
+      </div>
+
+      <div class="drink gold">
+        <svg width="48" height="58" viewBox="0 0 44 54">
+          <path d="M8 16 L10 44 Q22 48 34 44 L36 16 Z" fill="#E8A840" opacity="0.75"/>
+          <circle cx="22" cy="36" r="8" fill="white" opacity="0.45"/>
+          <path d="M10 26 Q22 22 34 26" fill="none" stroke="white" stroke-width="0.8" opacity="0.5"/>
+          <path d="M8 16 L10 44 Q22 48 34 44 L36 16 Z" fill="none" stroke="#A07830" stroke-width="1.3"/>
+          <line x1="8" y1="16" x2="36" y2="16" stroke="#A07830" stroke-width="2"/>
+          <path d="M32 14 Q38 8 36 4 Q40 6 38 14" fill="#F4A030" stroke="#C07820" stroke-width="0.6"/>
+          <circle cx="18" cy="28" r="1.5" fill="#8B2020" opacity="0.6"/>
+          <circle cx="24" cy="24" r="1" fill="#8B2020" opacity="0.5"/>
+        </svg>
+        <div class="drink-info">
+          <div class="drink-name">Whisky Sour</div>
+          <div class="drink-tag">🎶 El trago del novio 🤠</div>
+          <div class="drink-ing">Bourbon · limón · jarabe · clara de huevo · angostura</div>
+        </div>
+      </div>
+
+      <div class="drink purple">
+        <svg width="48" height="58" viewBox="0 0 44 54">
+          <path d="M6 6 L18 32 L18 44 L26 44 L26 32 L38 6 Z" fill="#C8E87A" opacity="0.7"/>
+          <path d="M10 14 L18 32 L26 32 L34 14 Z" fill="#F4A0C0" opacity="0.5"/>
+          <path d="M8 10 L18 32 L26 32 L36 10 Z" fill="#80D8C0" opacity="0.35"/>
+          <path d="M6 6 L18 32 L18 44 L26 44 L26 32 L38 6 Z" fill="none" stroke="#8A54A8" stroke-width="1.2"/>
+          <line x1="6" y1="6" x2="38" y2="6" stroke="#8A54A8" stroke-width="1.5"/>
+          <line x1="14" y1="44" x2="30" y2="44" stroke="#8A54A8" stroke-width="1.5"/>
+          <path d="M34 4 Q42 0 42 8 Q38 10 34 4Z" fill="#FFB830" stroke="#E89010" stroke-width="0.6"/>
+          <path d="M8 4 Q4 0 2 4 Q4 8 8 4Z" fill="#60B860" stroke="#40A040" stroke-width="0.5"/>
+          <line x1="26" y1="4" x2="30" y2="44" stroke="#D4849A" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="16" cy="22" r="1.2" fill="white" opacity="0.7"/>
+          <circle cx="22" cy="16" r="1" fill="white" opacity="0.6"/>
+        </svg>
+        <div class="drink-info">
+          <div class="drink-name">TropicRun</div>
+          <div class="drink-tag">💄 El trago de la novia 💍</div>
+          <div class="drink-ing">Ron blanco · mango · maracuyá · coco · lima · menta</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer">
+      <div class="footer-icons">🎊 💃 💒 🕺 🎊</div>
+      <div class="footer-text">Salud · Amor · y mucho sabor</div>
+    </div>
+
+    <div class="rainbow-bar-bottom"></div>
+  </div>
+</div>
+</body>
+</html>
